@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins";
+  background-color: #141416;
+  color: #ffffff;
+}
+
+body a {
+  text-decoration: none;
+  color: #0864e9;
+}
+
+body .wrap--label {
+  margin-top: 161px;
+  margin-left: 448.5px;
+}
+
+body .wrap--label .label {
+  width: 533px;
+  height: 64px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 64px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.02em;
+
+  color: #e6e8ec;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+body .sub-label {
+  width: 400px;
+  height: 24px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #777e91;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin-top: 40px;
+  margin-left: 170px;
+}
+body .form-controller {
+  margin-top: 40px;
+}
+
+body .form-controller .wrap-input {
+  width: 352px;
+  margin: 25px auto;
+}
+
+body .form-controller .wrap-input .label-input {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 22px;
+}
+
+body .form-controller .wrap-submit {
+  width: 352px;
+  margin: 16px auto;
+}
+
+body .footer {
+  position: fixed;
+  bottom: 52px;
+  width: 100%;
+  text-align: center;
+}
+
+body .footer .content {
+  width: 648px;
+  margin: auto;
+}
+.register .box {
+  width: 352px;
+  margin-top: 20px;
+}
+
+.register button {
+  display: block;
+  margin: auto;
+  background: #0864e9;
+  padding: 16px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  color: #fcfcfd;
+  margin-bottom: 30px;
+  margin-left: 170px;
+}

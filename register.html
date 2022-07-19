@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com
+"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap
+"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+"
+    />
+    <link rel="stylesheet" href="./common.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins
+"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="wrap--label">
+      <div class="label">Register</div>
+      <div class="sub-label">
+        Already have an account? <a href="login.html">Log In</a>
+      </div>
+    </div>
+    <div class="form-controller">
+      <div class="wrap-input">
+        <div class="label-input">Fullname</div>
+        <input id="username" type="text" placeholder="Enter your fullname" />
+        <!-- <div class="error-input">
+          Full name must be at least 3 characters and maximum of 100 characters.
+        </div> -->
+      </div>
+
+      <div class="wrap-input">
+        <div class="label-input">Email</div>
+        <input id="email" type="text" placeholder="Enter email address" />
+        <!-- <div class="error-input">Email is invalid.</div> -->
+      </div>
+
+      <div class="wrap-input">
+        <div class="label-input">Password</div>
+        <input
+          style="position: relative; z-index: 1"
+          type="password"
+          id="pwd"
+          placeholder="Enter your password"
+        />
+        <!-- <button style="margin-left: 310px"> -->
+        <img class="icon_eye" src="../image/hidden.png" />
+        <!-- </button> -->
+        <!-- <input type="text" /> -->
+        <!-- <div class="error-input">Password is required.</div> -->
+        <!-- <img src="../image/hidden.png" /> -->
+      </div>
+
+      <div class="wrap-input">
+        <div class="label-input">Re-type Password</div>
+        <input
+          style="position: relative; z-index: 1"
+          type="password"
+          id="a"
+          placeholder="Retype password"
+        />
+        <img class="icon_eye" src="../image/hidden.png" />
+        <!-- <div class="error-input">Password does not match.</div> -->
+        <!-- <img src="../image/hidden.png" /> -->
+      </div>
+      <!-- <div class="wrap-submit">
+        <div class="check-box">
+          <div style="width: 352px; display: flex; align-items: center">
+            <button id="click" class="click">
+              <div id="circle" class="circle"></div>
+            </button>
+            <div>I agree to Terms and Conditions</div>
+          </div>
+        </div>
+      </div> -->
+      <div class="wrap-submit">
+        <!-- <a href="#" class="redirect">Forgot password?</a> -->
+        <!-- <div class="term">
+          <input type="radio" />
+          <label>I agree to Terms and Conditions</label>
+        </div> -->
+        <div class="term">
+          <input type="checkbox" class="checkbox-round" value="true" id="check_register" />
+          <label class="term__label"
+            >I agree to <span>Terms and Conditions</span></label
+          >
+          <div class="error-term">
+            Read carefully and agree to the Terms and Conditions to continue.
+          </div>
+        </div>
+        <button>Register</button>
+      </div>
+      <!-- 
+      <div class="register">
+        <div class="box">
+          <div class="error-input">
+            Read carefully and agree to the Terms and Conditions to continue.
+          </div>
+        </div>
+        <button style="cursor: pointer">Register</button>
+      </div> -->
+    </div>
+    <div class="notification"></div>
+  </body>
+  <script src="toggle.js"></script>
+  <script src="./js/index.js"></script>
+</html>

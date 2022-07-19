@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./common.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrap--label">
+      <div class="label">Log In</div>
+      <div class="sub-label">
+        Don't have an account? <a href="register.html">Register</a>
+      </div>
+      <div class="error-message">
+        Incorrect email or password, please try again.
+      </div>
+    </div>
+    <div class="form-controller">
+      <!-- fullname -->
+      <div class="wrap-input">
+        <div class="label-input">Fullname</div>
+        <input type="text" placeholder="Enter your fullname" />
+        <!-- <div class="error-input">
+          Full name must be at least 3 characters and maximum of 100 characters.
+        </div> -->
+      </div>
+      <!-- email -->
+      <!-- <div class="wrap-input">
+        <div class="label-input">Password</div>
+        <input type="text" placeholder="Enter your password" />
+        <div class="error-input">Password is required.</div>
+        <img src="../image/hidden.png" />
+      </div> -->
+      <div class="wrap-input">
+        <div class="label-input">Password</div>
+        <input
+        class="icon_eye"
+          type="password"
+          id="pwd"
+          placeholder="Enter your password"
+        />
+        <img
+        class="icon_eye"
+          src="../image/hidden.png"
+        />
+    </div>
+
+      <div class="wrap-input">
+        <div class="label-input">Password2</div>
+        <input
+        class="icon_eye"
+          type="password"
+          id="pwd"
+          placeholder="Enter your password"
+        />
+        <img
+        class="icon_eye eye2"
+          src="../image/hidden.png"
+        />
+        <p></p>
+    </div>
+
+     <div class="wrap-submit">
+        <a href="#" class="redirect">Forgot password?</a>
+ 
+        <button style="cursor: pointer">Login</button>
+      </div>
+    <div class="notification"></div>
+    <div class="footer">
+      <div class="content">
+        * By logging in, you agree to our Terms of Use and to receive Metacity
+        emails & updates and acknowledge that you read our Privacy Policy.
+      </div>
+    </div>
+  </body>
+  <!-- <script src="toggle.js"></script> -->
+  <script src="./js/index.js"></script>
+</html>
