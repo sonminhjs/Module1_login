@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com
+"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap
+"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css
+"
+    />
+    <link rel="stylesheet" href="./common.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins
+"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="wrap--label">
+      <div class="label">Reset Password?</div>
+      <div class="sub-label">
+        Create your new password by type them twice
+      </div>
+    </div>
+    <div class="form-controller">
+      <div class="wrap-input">
+
+      <div class="wrap-input">
+        <div class="label-input">Password</div>
+        <input
+          style="position: relative; z-index: 1"
+          type="password"
+          id="pwd"
+          placeholder="Enter your password"
+        />
+        <img class="icon_eye" src="../image/hidden.png" />
+      </div>
+      <div class="error-input">
+        Display error message here.
+      </div>
+      <div class="wrap-input">
+        <div class="label-input">Re-type Password</div>
+        <input
+          style="position: relative; z-index: 1"
+          type="password"
+          id="a"
+          placeholder="Retype password"
+        />
+        <img class="icon_eye" src="../image/hidden.png" />
+        <!-- <div class="error-input">Password does not match.</div> -->
+        <!-- <img src="../image/hidden.png" /> -->
+      </div>
+       <div class="error-input">
+        Display error message here.
+      </div>
+      <div class="wrap-submit">
+        <button style="cursor: pointer">Reset</button>
+      </div>
+    </div>
+    <div class="notification"></div>
+  </body>
+  <script src="../toggle.js"></script>
+  <script src="../js/index.js"></script>
+</html>

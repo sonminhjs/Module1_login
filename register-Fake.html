@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register</title>
+    <title>Register-Fake</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap
 "
@@ -30,7 +30,7 @@
       </div>
     </div>
     <div class="form-controller">
-      <form onsubmit="return validate(event)">
+      <form id="btnRegister">
         <div class="wrap-input-controller">
           <div class="wrap-input">
             <div class="label-input">Fullname</div>
@@ -38,14 +38,20 @@
               id="username"
               type="text"
               placeholder="Enter your fullname"
+              autocomplete="off"
             />
-            <div class="error-input" id="errUsername"></div>
+            <small></small>
           </div>
 
           <div class="wrap-input">
             <div class="label-input">Email</div>
-            <input id="email" type="text" placeholder="Enter email address" />
-            <div class="error-input" id="errEmail"></div>
+            <input
+              id="email"
+              type="text"
+              placeholder="Enter email address"
+              autocomplete="off"
+            />
+            <!-- <div class="error-input" id="errEmail"></div> -->
           </div>
 
           <div class="wrap-input">
@@ -55,9 +61,10 @@
               type="password"
               id="password"
               placeholder="Enter your password"
+              autocomplete="off"
             />
+            <small></small>
             <img class="icon_eye" src="../image/hidden.png" />
-            <div class="error-input" id="errPassword"></div>
           </div>
 
           <div class="wrap-input">
@@ -68,8 +75,8 @@
               id="confirmPassword"
               placeholder="Retype password"
             />
+            <small></small>
             <img class="icon_eye" src="../image/hidden.png" />
-            <div class="error-input" id="errConfirm"></div>
           </div>
         </div>
 
@@ -88,14 +95,10 @@
               Read carefully and agree to the Terms and Conditions to continue.
             </div>
           </div>
-          <button type="submit" id="btnRegister" style="cursor: pointer">
-            Register
-          </button>
+          <button type="submit" style="cursor: pointer">Register</button>
         </div>
       </form>
     </div>
-    <div class="notification"></div>
-
     <script src="../js/validation.js"></script>
     <script src="../js/index.js"></script>
   </body>
