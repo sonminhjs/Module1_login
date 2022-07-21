@@ -92,7 +92,7 @@ const checkEmail = () => {
   const email = emailEl.value.trim();
   if (!isRequired(email)) {
     showError(emailEl, "Email không được để trống nhé.");
-  } else if (!isEmailValid(email.length, min, max)) {
+  } else if (!isEmailValid(email, min, max)) {
     showError(emailEl, "Email sai rồi nhé.");
   } else {
     showSuccess(emailEl);
@@ -108,9 +108,12 @@ const checkPassword = () => {
   const password = passwordEl.value.trim();
   if (!isRequired(password)) {
     showError(passwordEl, "Password không được để trống nhé");
-  } else if (!isPasswordSecure(password.length, min, max)) {
+  } else if (!isBetween(password.length, min, max)) {
     showError(passwordEl, "Password phải lớn hơn 8 ký tự nhé. ");
-  } else {
+  } else if (!isPasswordSecure(password)) {
+    showError(passwordEl, "Password gồm 1 chữ Hoa 1 ký tự đặc biệt. ");
+  }
+  else {
     showSuccess(passwordEl);
     valid = true;
   }
@@ -133,8 +136,9 @@ const checkConfirmPassword = () => {
   return valid;
 };
 const isEmailValid = (email) => {
+  const length = email.length;
   const re =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return re.test(email);
 };
 const isPasswordSecure = (password) => {
@@ -175,7 +179,6 @@ form.addEventListener("submit", function (e) {
     isPasswordValid = checkPassword(),
     isConfirmPasswordValid = checkConfirmPassword();
 
-  console.log(isUsernameValid);
   let isFormValid =
     isUsernameValid &&
     isEmailValid &&
@@ -183,6 +186,7 @@ form.addEventListener("submit", function (e) {
     isConfirmPasswordValid;
   // submit to the server if the form is valid
   if (isFormValid) {
+    alert('Submit form successfully');
   }
 });
 const debounce = (fn, delay = 500) => {
