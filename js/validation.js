@@ -1,62 +1,65 @@
-function validateEmailRegex(email) {
-  var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return re.test(email);
-}
-function validate(event) {
-  event.preventDefault();
-  let username = document.getElementById("username").value;
-  let email = document.getElementById("email").value;
-  // console.log("abcabc", validateEmailRegex(email));
-  let password = document.getElementById("password").value;
-  let confirmPassword = document.getElementById("confirmPassword").value;
+// function validateEmailRegex(email) {
+//   var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//   return re.test(email);
+// }
+// function validate(event) {
+//   event.preventDefault();
+//   let username = document.getElementById("username").value;
+//   let email = document.getElementById("email").value;
+//   // console.log("abcabc", validateEmailRegex(email));
+//   let password = document.getElementById("password").value;
+//   let confirmPassword = document.getElementById("confirmPassword").value;
 
-  let validateUsername = "";
-  let validateEmail = "";
-  let validatePassword = "";
-  let validateConfirm = "";
+//   let validateUsername = "";
+//   let validateEmail = "";
+//   let validatePassword = "";
+//   let validateConfirm = "";
 
-  if (username === "") validateUsername = "Không được để trống em ei";
-  else if (username.length < 3 && username.length > 0)
-    validateUsername = "Tên phải >= 3 ký tự";
-  else if (username.length > 30) validateUsername = "Tên nhỏ hơn 30 ký tự";
+//   if (username === "") validateUsername = "Không được để trống em ei";
+//   else if (username.length < 3 && username.length > 0)
+//     validateUsername = "Tên phải >= 3 ký tự";
+//   else if (username.length > 30) validateUsername = "Tên nhỏ hơn 30 ký tự";
 
-  if (email === "") {
-    validateEmail = "Không được để trống em ei";
-  } else if (email.length < 8) {
-    validateEmail = "Email phải >= 8 ký tự";
-  } else if (email.length > 50) {
-    validateEmail = "Email phải < 50 ký tự";
-  } else if (!validateEmailRegex(email)) {
-    validateEmail = "Email của bạn sai định dạng";
-  }
+//   // ------------------
 
-  if (password === "") validatePassword = "Không được để trống em ei";
-  else if (password.length < 8 && password.length > 0)
-    validatePassword = "Mật khẩu phải >= 8 ký tự";
-  else if (password.length > 20) validatePassword = "Mật khẩu phải < 20 ký tự";
+//   if (email === "") {
+//     validateEmail = "Không được để trống em ei";
+//   } else if (email.length < 8) {
+//     validateEmail = "Email phải >= 8 ký tự";
+//   } else if (email.length > 50) {
+//     validateEmail = "Email phải < 50 ký tự";
+//   } else if (!validateEmailRegex(email)) {
+//     validateEmail = "Email của bạn sai định dạng";
+//   }
 
-  if (confirmPassword === "")
-    validateConfirm = "Bạn chưa xác nhận lại mật khẩu";
-  else if (confirmPassword.length < 8 && confirmPassword.length > 0)
-    validateConfirm = "confirmPassword min = 8 ký tự";
-  else if (confirmPassword !== password)
-    validateConfirm = "Mật khẩu nhập lại không đúng";
-  else if (confirmPassword.length > 20)
-    validateConfirm = "confirmPassword max = 20 ký tự";
+//   if (password === "") validatePassword = "Không được để trống em ei";
+//   else if (password.length < 8 && password.length > 0)
+//     validatePassword = "Mật khẩu phải >= 8 ký tự";
+//   else if (password.length > 20) validatePassword = "Mật khẩu phải < 20 ký tự";
 
-  let errUsername = document.getElementById("errUsername");
-  errUsername.innerHTML = validateUsername;
+//   if (confirmPassword === "")
+//     validateConfirm = "Bạn chưa xác nhận lại mật khẩu";
+//   else if (confirmPassword.length < 8 && confirmPassword.length > 0)
+//     validateConfirm = "confirmPassword min = 8 ký tự";
+//   else if (confirmPassword !== password)
+//     validateConfirm = "Mật khẩu nhập lại không đúng";
+//   else if (confirmPassword.length > 20)
+//     validateConfirm = "confirmPassword max = 20 ký tự";
 
-  let errEmail = document.getElementById("errEmail");
-  errEmail.innerHTML = validateEmail;
+//   let errUsername = document.getElementById("errUsername");
+//   errUsername.innerHTML = validateUsername;
 
-  let errPassword = document.getElementById("errPassword");
-  errPassword.innerHTML = validatePassword;
+//   let errEmail = document.getElementById("errEmail");
+//   errEmail.innerHTML = validateEmail;
 
-  let errConfirm = document.getElementById("errConfirm");
-  errConfirm.innerHTML = validateConfirm;
-}
+//   let errPassword = document.getElementById("errPassword");
+//   errPassword.innerHTML = validatePassword;
 
+//   let errConfirm = document.getElementById("errConfirm");
+//   errConfirm.innerHTML = validateConfirm;
+// }
+
+// -------------------------------------------
 const usernameEl = document.querySelector("#username");
 const emailEl = document.querySelector("#email");
 const passwordEl = document.querySelector("#password");
@@ -116,7 +119,6 @@ const checkPassword = () => {
 };
 const checkConfirmPassword = () => {
   let valid = false;
-  // check confirm password
   const confirmPassword = confirmPasswordEl.value.trim();
   const password = passwordEl.value.trim();
 
@@ -131,7 +133,8 @@ const checkConfirmPassword = () => {
   return valid;
 };
 const isEmailValid = (email) => {
-  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const re =
+    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 };
 const isPasswordSecure = (password) => {
@@ -149,7 +152,6 @@ const showError = (input, message) => {
   // add the error class
   formField.classList.remove("success");
   formField.classList.add("error");
-
   // show the error message
   const error = formField.querySelector("small");
   error.textContent = message;
@@ -172,6 +174,8 @@ form.addEventListener("submit", function (e) {
     isEmailValid = checkEmail(),
     isPasswordValid = checkPassword(),
     isConfirmPasswordValid = checkConfirmPassword();
+
+  console.log(isUsernameValid);
   let isFormValid =
     isUsernameValid &&
     isEmailValid &&
@@ -207,7 +211,7 @@ form.addEventListener(
       case "password":
         checkPassword();
         break;
-      case "confirm-password":
+      case "confirmpassword":
         checkConfirmPassword();
         break;
     }
